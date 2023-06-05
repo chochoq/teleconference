@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:teleconference/widgets/custom_button.dart';
 
-class LoginScreen extends StatelessWidget {
+import '../resource/auth_methods.dart';
+
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final AuthMethods _authMethods = AuthMethods();
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +31,12 @@ class LoginScreen extends StatelessWidget {
             child: Image.asset('assets/images/onboarding.jpg'),
           ),
           CustomButton(
-            text: 'Google Login',
-            onPressed: () {
-              print('dd');
+            text: 'Google Sign In',
+            onPressed: () async {
+              bool res = await _authMethods.signInWithGoogle(context);
+              if (res) {
+                Navigator.pushNamed(context, '/home');
+              }
             },
           )
           // Text('네비게이션바?'),

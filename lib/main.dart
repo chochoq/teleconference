@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teleconference/screens/home_screen.dart';
 import 'package:teleconference/screens/login_screen.dart';
 import 'package:teleconference/utils/colors.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: backgroundColor),
       routes: {
         '/login': (context) => const LoginScreen(),
+        '/home-screen': (context) => const HomeScreen(),
       },
       home: const LoginScreen(),
     );
