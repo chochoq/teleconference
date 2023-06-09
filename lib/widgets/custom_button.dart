@@ -12,11 +12,13 @@ class CustomButton extends StatelessWidget {
       padding: const EdgeInsets.all(18.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            foregroundColor: buttonColor,
-            minimumSize: const Size(double.infinity, 50),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-                side: const BorderSide(color: buttonColor))),
+          foregroundColor: buttonColor,
+          minimumSize: const Size(double.infinity, 50),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+            side: const BorderSide(color: buttonColor),
+          ),
+        ),
         onPressed: onPressed,
         child: Text(
           text,
